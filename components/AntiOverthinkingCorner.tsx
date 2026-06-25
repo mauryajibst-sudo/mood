@@ -170,7 +170,7 @@ export function AntiOverthinkingCorner() {
 
           {/* Messages */}
           <div className="bg-card rounded-2xl p-8 border-2" style={{ borderColor: '#fce7f3' }}>
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-6">
               <motion.p
                 key={messageIndex}
                 initial={{ opacity: 0, y: 10 }}
@@ -182,18 +182,27 @@ export function AntiOverthinkingCorner() {
                 {messages[messageIndex]}
               </motion.p>
 
-              <motion.button
-                onClick={() => setMessageIndex((prev) => (prev + 1) % messages.length)}
-                className="mt-4 text-sm font-semibold px-6 py-2 rounded-full"
-                style={{
-                  backgroundColor: '#fce7f3',
-                  color: '#ec4899',
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <motion.div
+                className="flex flex-col items-center gap-2"
               >
-                Next Message
-              </motion.button>
+                <motion.button
+                  onClick={() => setMessageIndex((prev) => (prev + 1) % messages.length)}
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.9 }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="text-6xl cursor-pointer hover:drop-shadow-xl transition-all"
+                >
+                  💖
+                </motion.button>
+                <motion.p
+                  className="text-foreground font-semibold text-sm"
+                  animate={{ opacity: [0.6, 1, 0.6] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  Press this princess
+                </motion.p>
+              </motion.div>
             </div>
           </div>
 
