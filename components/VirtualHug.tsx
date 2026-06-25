@@ -37,36 +37,9 @@ export function VirtualHug() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#ec4899' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12" style={{ color: '#ec4899' }}>
             Virtual Hug
           </h2>
-
-          {/* Clickable Pink Heart with Message */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-12 flex flex-col items-center gap-4"
-          >
-            <motion.button
-              onClick={() => setShowMessage(true)}
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.9 }}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-8xl md:text-9xl cursor-pointer hover:drop-shadow-2xl transition-all"
-            >
-              💖
-            </motion.button>
-            <motion.p
-              className="text-foreground text-lg font-semibold"
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              Press this princess
-            </motion.p>
-          </motion.div>
 
           {/* Couple GIF */}
           <div ref={containerRef} className="flex justify-center mb-8 h-64 md:h-80">
